@@ -1,2 +1,2 @@
 # HackTheTree-StudentDashboard
-Project for Hackthe Tree
+Project for Hack the Tree
