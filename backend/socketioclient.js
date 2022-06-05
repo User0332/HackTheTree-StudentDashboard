@@ -10,10 +10,11 @@ const SEND_BUTTON_ID = '#send';
 const LEAVE_BUTTON_ID = '#leave';
 const CHAT_BOX_ID = '#chat';
 const MESSAGE_BOX_ID = '#message';
+const BACKEND_CHAT_URL = 'http://127.0.0.1/chat';
 
 
 $(document).ready(function() {
-	socket = io.connect('http://'+document.domain+':'+window.location.port+'/chat');
+	socket = io.connect(BACKEND_CHAT_URL);
 	socket.on('connect', function() {
 		socket.emit('status', {'action': 'join'});
 	});

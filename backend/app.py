@@ -37,7 +37,7 @@ Session(app)
 # FLASK METHODS
 
 @app.before_first_request
-def clear_session():
+def clear_session(): # make sure no users are logged in when the server restarts
 	session.pop('username', None)
 	session.pop('room', None)
 
@@ -114,6 +114,9 @@ def api(api_request):
 		}
 	)
 
+@app.route("/chat", methods=['GET', 'POST'])
+def chat():
+	return ""
 
 # SOCKETIO METHODS
 
